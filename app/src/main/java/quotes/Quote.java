@@ -11,7 +11,8 @@ public class Quote {
         this.text = text;
 
     }
+
+    public String toString(){
+        return String.format("%s %s", text, author);
+    }
 }
-
-
-// A claas needs a toString method to print something other than the memory location

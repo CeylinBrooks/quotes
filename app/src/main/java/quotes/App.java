@@ -7,30 +7,54 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import com.google.gson.Gson;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class App {
 
 
-    public static boolean main() throws IOException{
-        Reader reader = Files.newBufferedReader(Paths.get("/Users/cb/codefellows/401/quotes/app/src/main/java/resources/quotes.json"));
+    public static void main(String[] args) throws IOException{
         Gson gson = new Gson();
+        Reader reader = Files.newBufferedReader(Paths.get("app/src/main/java/resources/quotes.json"));
         Quote[] quotes = gson.fromJson(reader, Quote[].class);
-
-        for (Quote quote : quotes){
-            int random = ThreadLocalRandom.current().nextInt(0, quotes.length);
-            String author = quotes[random].author;
-            String text = quotes[random].text;
-            String result = text + author;
-            System.out.println(result);
-            if(result == null){
-                return false;
-            }
-            break;
-        }
-        reader.close();
-        return true;
-
+//        int length = quotes.length;
+        int random = ThreadLocalRandom.current().nextInt(0, quotes.length);
+        System.out.println(quotes[random]);
     }
 
+//    public static Quote[] quoteArray() throws IOException {
+//        Gson gson = new Gson();
+//        Reader reader = Files.newBufferedReader(Paths.get("app/src/main/java/resources/quotes.json"));
+//        Quote[] quotes = gson.fromJson(reader, Quote[].class);
+//        System.out.println(quotes[0]);
+//        return quotes;
+//    }
+//
+//    public static int randomNum() throws IOException {
+//        int length = quoteArray().length;
+//        int random = ThreadLocalRandom.current().nextInt(0, length);
+//        System.out.println(random);
+//        return random;
+//    }
+//
+//    public static Quote randomQuote(int n) throws IOException {
+//        Quote[] quote = quoteArray();
+//
+//        return quote[n];
+//    }
+
 }
+
+//        for (Quote quote : quotes){
+//            int random = ThreadLocalRandom.current().nextInt(0, quotes.length);
+//            String author = quotes[random].author;
+//            String text = quotes[random].text;
+//            String result = text + author;
+//            System.out.println(result);
+//            if(result == null){
+//                return false;
+//            }
+//            break;
+//        }
+//        reader.close();
+//        return true;

@@ -11,14 +11,28 @@ import java.io.IOException;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-//        App classUnderTest = new App();
-//        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-    }
     @Test
-    public void JsonTest() throws IOException {
-        boolean result = App.main();
-        assertTrue(result);
-
+    public void quoteTest(){
+        String testText = "Charles Dickens";
+        String testAuthor = "“Ask no questions, and you'll be told no lies.”";
+        String expected = String.format("%s, %s", testText, testAuthor);
+        String actual = "Charles Dickens, “Ask no questions, and you'll be told no lies.”";
+        assertEquals(expected, actual);
     }
+
+//    @Test public void quoteTest() throws IOException {
+//        int n = App.randomNum();
+//        Quote expected = App.randomQuote(n);
+//        Quote actual = App.randomQuote(n);
+//        assertEquals(expected, actual);
+//        String testAuthor = "Charles Dickens";
+//        String testText = "“Ask no questions, and you'll be told no lies.”";
+//        String expected =
+//    }
+//    @Test
+//    public void JsonTest() throws IOException {
+//        boolean result = App.main();
+//        assertTrue(result);
+//
+//    }
 }
